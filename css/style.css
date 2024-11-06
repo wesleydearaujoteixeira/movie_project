@@ -1,0 +1,182 @@
+.navbar-brand {
+    position: relative;
+}
+
+#logo {
+    width: 80px;
+}
+
+
+
+#moviestar-title {
+    color: #FFF;
+    position: absolute;
+    bottom: -2px;
+    font-size: 30px;
+    left: 55px;
+    font-weight: bold;
+
+}
+
+
+#main-navbar {
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#search-form {
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 50%;
+    margin-left: 180px;
+    display: flex;
+}
+
+#search-form .form-control {
+    border: none;
+    width: 90%;
+    box-shadow: none;
+}
+
+
+#navbar {
+    min-width: 30%;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.nav-link {
+    color: white;
+  
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    
+}
+
+li {
+    list-style-type: none;
+    margin-right: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.white {
+    color: white;
+}
+
+
+
+#footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+
+#social-container li, 
+#footer-links-container li {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+
+#social-container li, 
+#footer-links-container li {
+    display: inline-block;
+    margin: 0 20px;
+
+}
+
+
+#social-container li {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    transition: .5s;
+    line-height: 3; 
+
+}
+
+#social-container li:hover {
+    background-color: #333;
+
+}
+
+#main-container {
+    background-color: #121212;
+    color: white;
+    padding: 40px;
+    height: 64vh;
+}
+
+
+
+.msg-container {
+    background-color: #000;
+    padding: 15px;
+
+}
+
+.msg {
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    border: solid 1px #000;
+    text-align: center;
+}
+
+.msg.error {
+    color: #842029;
+    background-color: #F8D7dA;
+    border-color: #F5C2C7;
+}
+
+.btn-header {
+    border: none;
+    background-color: #0F513D;
+}
+
+.msg.sucess {
+    color: #0F513D;
+    background-color: #D1E7DD;
+    border-color: #BADBCC;
+}
+
+
+#social-container a, 
+#footer-links-container a {
+    color: white;
+    transition: .5s;
+    text-decoration: none;
+
+
+}
+
+
+#social-container li i {
+    font-size: 25px;
+}
+
+#footer-links-container  {
+    margin: 30px 0;
+}
