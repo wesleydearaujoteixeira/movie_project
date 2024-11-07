@@ -131,12 +131,6 @@ li {
 
 
 
-.msg-container {
-    background-color: #000;
-    padding: 15px;
-
-}
-
 .msg {
     width: 60%;
     margin: 0 auto;
@@ -179,4 +173,9 @@ li {
 
 #footer-links-container  {
     margin: 30px 0;
+}
+
+.auth-row {
+    display: flex;
+    background-color: aqua;
 }
