@@ -1,9 +1,22 @@
 <?php
 
+
 require_once("globals.php");
 require_once("db.php");
+require_once("models/Message.php");
 
 $flasshMessage = [];
+
+$msg = new Message($BASE_URL);
+$flasshMessage = $msg->getMessage();
+
+
+
+if(!empty($_SESSION["msg"])){
+  $msg->clearMessage();
+}
+
+
 
 
 ?>
@@ -53,9 +66,11 @@ $flasshMessage = [];
 
 <?php if(!empty($flasshMessage["msg"])): ?>
 
+    <div class="msg-container">
+    
+        <p class="msg <?= $flasshMessage["type"]?>"> <?= $flasshMessage["msg"] ?> </p>
+    </div>
+
 <?php endif; ?>
 
 
-<div class="msg-container">
-    <p class="msg sucess"> Testando Mensagem </p>
-</div>
