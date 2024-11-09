@@ -143,6 +143,12 @@ li {
     text-align: center;
 }
 
+#responsive {
+    background-color: #0F513D;
+    display: flex;
+    justify-content: space-between;
+}
+
 
 
 .msg.error {

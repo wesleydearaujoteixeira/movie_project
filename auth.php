@@ -23,7 +23,7 @@
                         <div class="col-md-4" id="login-container">
                             <h2> Entrar </h2>
                         </div>
-                        <form action="" method="POST">
+                        <form action="auth-process.php" method="POST">
                         
                             <input type="hidden" name="type" value="login">
                             <div class="form-group">
