@@ -28,7 +28,6 @@ $userData = $userDAO->findByToken($token);
 
 
 
-
 ?>
 
 <head>

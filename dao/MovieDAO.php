@@ -55,6 +55,24 @@ class MovieDAO implements MovieDAOinterface {
 
     public function getMoviesByCategory($category){
 
+        $stmt = $this->conn->prepare("SELECT * FROM movies WHERE category = :category ORDER BY id DESC LIMIT 3");
+
+        $stmt->bindParam(":category", $category);
+        $stmt->execute();
+
+
+        if ($stmt->rowCount() > 0) {
+            $movies = $stmt->fetchAll();
+            $movieList = [];
+            foreach ($movies as $row) {
+                $movieList[] = $row;
+
+            }
+
+            return $movieList;
+        }else {
+            return false;
+        } 
     }
 
     

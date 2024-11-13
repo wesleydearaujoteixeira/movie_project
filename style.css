@@ -246,6 +246,7 @@ body {
     font-size: 1.5rem;
     margin-top: 15px;
     border-radius: 8px;
+    padding: 10px;
 }
 
 .new-movie-container {
@@ -318,7 +319,9 @@ body {
 
 
 .section-title {
-    font-size: 24px;
+    color: #CCC;
+    font-size: 30px;
+    font-weight: bold;
     border-left: 4px solid #F5C518;
     padding-left: 12px;
     margin-top: 20px;
@@ -398,6 +401,52 @@ body {
     border-color: #333;
 }
 
+.table {
+    background-color: #0F513D;
+}
+
+
+
+.title-comedy {
+    color: #CCC;
+    font-weight: bold;
+    font-size: 30px;
+    border-left: 4px solid #F5C518;
+    padding-left: 12px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  
+}
+
+/* dashboard */
+
+
+#add-movie-container {
+    text-align: right;
+    margin-bottom: 3rem;
+}
+
+
+
+#movies-dashboard .table {
+    background-color: #000;
+    color: #CCC;
+
+}
+
+
+.action-column, form {
+    display: inline-block;
+}
+
+#movies-dashboard .table th {
+    border-top: none;
+}
+
+
+#movies-dashboard .table tr {
+    padding: 15px 0;
+}
 
 
 
