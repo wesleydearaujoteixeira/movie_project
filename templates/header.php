@@ -1,10 +1,10 @@
 <?php
 
 
-require_once("globals.php");
-require_once("db.php");
-require_once("models/Message.php");
-require_once("dao/userDAO.php");
+require_once("./globals.php");
+require_once("./db.php");
+require_once("./models/Message.php");
+require_once("./dao/userDAO.php");
 
 $flasshMessage = [];
 
@@ -19,11 +19,9 @@ if(!empty($_SESSION["msg"])){
 
 $userDAO = new UserDAO($conn, $BASE_URL);
 
-$token = $_SESSION["token"];
 
-if(!$token || $token == null) {
-    $msg->setMessage("faça login para entrar no sistema", "error", "index.php");
-}
+
+$token = $_SESSION["token"];
 
 
 $userData = $userDAO->findByToken($token);

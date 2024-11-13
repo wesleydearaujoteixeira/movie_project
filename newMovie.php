@@ -1,13 +1,13 @@
 <?php
 
 
-require_once("templates/header.php");
-require_once("dao/userDAO.php");
+require_once("./templates/header.php");
+require_once("./dao/userDAO.php");
 
 $userDAO = new UserDAO($conn, $BASE_URL);
 
 
-$userData = $userDAO->verifyToken(true);
+//$userData = $userDAO->verifyToken(true);
 
 ?>
 

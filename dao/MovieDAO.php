@@ -33,8 +33,24 @@ class MovieDAO implements MovieDAOinterface {
 
 
     public function getLatestMovies(){
-
+        // Realiza a consulta, sem necessidade de chamar execute() depois
+        $stmt = $this->conn->query("SELECT * FROM movies ORDER BY id DESC LIMIT 5");
+    
+        // Tenta buscar todos os resultados em um array
+        $movies = $stmt->fetchAll();
+    
+        // Se houver filmes, processa e retorna o array de filmes
+        if ($movies) {
+            $movieList = [];
+            foreach ($movies as $row) {
+                $movieList[] = $row;  // Processa cada linha com buildMovie()
+            }
+            return $movieList;
+        } else {
+            return false;  // Retorna false caso não haja filmes
+        }
     }
+    
 
 
     public function getMoviesByCategory($category){

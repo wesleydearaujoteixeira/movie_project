@@ -1,7 +1,7 @@
 <?php
 
-require_once("templates/header.php");
-require_once("dao/userDAO.php");
+require_once("./templates/header.php");
+require_once("./dao/userDAO.php");
 
 $userDAO = new UserDAO($conn, $BASE_URL);
 
@@ -9,24 +9,12 @@ $userDAO = new UserDAO($conn, $BASE_URL);
 $userData = $userDAO->verifyToken(true);
 
 
-if($userData["image"] == "" || $userData["image"] == null) {
-    $userData["image"] = "user-default.jpeg";
-}
-
-
-$image = $userData["image"];
-                             
-if(!$image || $image == null || $image == "") {
-   $image = "img/users/user-default.jpeg";
-
-}
-
 
 ?>
 
         <main id="profile-container" class="container-fluid">
 
-                        <img class="image" src="<?= $image ?>" alt="logo">
+                        <img class="image" src="<?= $userData["image"] ?>" alt="logo">
                 
     
                     <section>
@@ -92,7 +80,7 @@ if(!$image || $image == null || $image == "") {
 
 <?php
 
-require_once("templates/footer.php");
+require_once("./templates/footer.php");
 
 
 ?>
