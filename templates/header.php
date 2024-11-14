@@ -75,7 +75,6 @@ $userData = $userDAO->findByToken($token);
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav">
                <?php if($userData):?>
-                <p> ta logado </p>
                 <li class="nav-item">
                     <a href="newMovie.php" method="GET" class="nav-link"> 
                         <i class="far fa-plus-square"></i>

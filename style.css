@@ -447,6 +447,40 @@ body {
 
 
 
+.edit-btn, 
+.delete-btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: .5s;
+    border: none;
+}
+
+.edit-btn {
+    background-color: #0DCAF0;
+    color: #fff;
+}
+
+
+.edit-btn:hover {
+    background-color: transparent;
+    color: #0DCAF0;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background-color: #DC3545;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: transparent;
+    color: #DC3545;
+}
+
+
+
 
 @media screen and (max-width: 850px) {
     

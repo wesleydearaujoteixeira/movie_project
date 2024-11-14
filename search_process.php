@@ -69,8 +69,11 @@
                 <?php 
                     }
                 } else {
-                    echo "<p>Nenhum filme encontrado.</p>";  // Caso não haja filmes
+                    echo "<p>Nenhum filme encontrado.</p>";
+                    
                 }
+
+
                 ?>
             </div>
             

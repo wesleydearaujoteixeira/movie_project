@@ -1,8 +1,8 @@
 <?php
 
 
-require_once("models/Movie.php");
-require_once("models/Message.php");
+require_once("./models/Movie.php");
+require_once("./models/Message.php");
 
 
 class MovieDAO implements MovieDAOinterface {
@@ -76,7 +76,25 @@ class MovieDAO implements MovieDAOinterface {
     }
 
     
-    public function getMovieByUserId($id){
+    public function getMovieByUserId($users_id){
+
+        $stmt = $this->conn->prepare("SELECT * FROM movies WHERE users_id = :users_id ORDER BY id DESC");
+
+        $stmt->bindParam(":users_id", $users_id);
+        $stmt->execute();
+        
+        if ($stmt->rowCount() > 0) {
+            $movies = $stmt->fetchAll();
+            $movieList = [];
+            foreach ($movies as $row) {
+                $movieList[] = $row;
+            }
+            return $movieList;
+        } else {
+            return false;
+        }
+
+
 
     }
     public function findById($id) {
@@ -101,12 +119,6 @@ class MovieDAO implements MovieDAOinterface {
         } else {
             return false;
         }
-
-
-
-
-
-
 
     }
     public function create($title, $description, $image, $trailer, $category, $length, $users_id, $redirect = true){
@@ -135,7 +147,13 @@ class MovieDAO implements MovieDAOinterface {
     public function update($title, $description, $image, $trailer, $category, $length, $users_id){
 
     }
-    public function destroy($users_id){
+    public function destroy($id){
+
+        $stmt = $this->conn->prepare("DELETE FROM movies WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+
+        $this->message->setMessage("Filme excluído com sucesso!", "sucess", "dashboard.php");
 
     }
 }
