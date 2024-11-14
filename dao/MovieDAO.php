@@ -84,6 +84,30 @@ class MovieDAO implements MovieDAOinterface {
     }
     public function findByTitle($title){
 
+
+        $stmt = $this->conn->prepare("SELECT * FROM movies WHERE title LIKE :title");
+
+        $title = "%" . $title . "%";  // Adiciona os caracteres `%` ao redor do título para corresponder a qualquer posição
+        $stmt->bindParam(":title", $title);
+        $stmt->execute();
+        
+        if ($stmt->rowCount() > 0) {
+            $movies = $stmt->fetchAll();
+            $movieList = [];
+            foreach ($movies as $row) {
+                $movieList[] = $row;
+            }
+            return $movieList;
+        } else {
+            return false;
+        }
+
+
+
+
+
+
+
     }
     public function create($title, $description, $image, $trailer, $category, $length, $users_id, $redirect = true){
 

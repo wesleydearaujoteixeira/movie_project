@@ -61,8 +61,8 @@ $userData = $userDAO->findByToken($token);
 
     <!-- Formulario de Busca  -->
 
-        <form action="" method="get" id="search-form" class="form-inline my-2 my-lg-0">
-            <input type="text" id="search" name="q" class="form-control mr-sm-2" type="search"
+        <form action="search_process.php" method="get" id="search-form" class="form-inline my-2 my-lg-0">
+            <input type="text" id="search" name="search" class="form-control mr-sm-2" type="search"
                 placeholder="Search..."
                 aria-label="Search"
             >
