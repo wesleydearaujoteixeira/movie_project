@@ -4,9 +4,17 @@ require_once("./templates/header.php");
 require_once("./dao/userDAO.php");
 
 $userDAO = new UserDAO($conn, $BASE_URL);
-
-
 $userData = $userDAO->verifyToken(true);
+
+
+require_once("./globals.php");
+require_once("./db.php");
+require_once("./models/User.php");
+require_once("./dao/MovieDAO.php");
+
+$message = new Message($BASE_URL);
+$movieDAO = new MovieDAO($conn, $BASE_URL);
+
 
 
 

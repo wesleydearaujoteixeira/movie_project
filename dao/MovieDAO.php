@@ -99,7 +99,21 @@ class MovieDAO implements MovieDAOinterface {
     }
     public function findById($id) {
 
+        $stmt = $this->conn->prepare("SELECT * FROM movies WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        
+        if ($stmt->rowCount() > 0) {
+            $movie = $stmt->fetch();
+            return $movie;
+        } else {
+            return false;
+        }
+
     }
+
+
+
     public function findByTitle($title){
 
 
@@ -144,9 +158,13 @@ class MovieDAO implements MovieDAOinterface {
 
 
     }
+    
+    
     public function update($title, $description, $image, $trailer, $category, $length, $users_id){
 
     }
+
+
     public function destroy($id){
 
         $stmt = $this->conn->prepare("DELETE FROM movies WHERE id = :id");

@@ -38,7 +38,7 @@
                 ?>
                     <div id="#">
                         <div class="card movie-card">
-                            <img src="<?= $movie["image"] ?>" class="img" alt="Imagem do filme">
+                            <img src="<?= $movie["image"] ?>" class="img-logo" alt="Imagem do filme">
                             <div class="card-body">
                                 <p class="card-rating">
                                     <i class="fas fa-star"></i>
