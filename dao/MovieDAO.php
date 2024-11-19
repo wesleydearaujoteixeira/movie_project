@@ -19,19 +19,6 @@ class MovieDAO implements MovieDAOinterface {
         $this->message = new Message($url);
     }
 
-
-    public function buildMovie($data){
-
-    }
-
-
-    public function findAll(){
-
-
-
-    }
-
-
     public function getLatestMovies(){
         // Realiza a consulta, sem necessidade de chamar execute() depois
         $stmt = $this->conn->query("SELECT * FROM movies ORDER BY id DESC LIMIT 5");
@@ -97,6 +84,8 @@ class MovieDAO implements MovieDAOinterface {
 
 
     }
+
+    
     public function findById($id) {
 
         $stmt = $this->conn->prepare("SELECT * FROM movies WHERE id = :id");
@@ -111,7 +100,6 @@ class MovieDAO implements MovieDAOinterface {
         }
 
     }
-
 
 
     public function findByTitle($title){
@@ -151,16 +139,40 @@ class MovieDAO implements MovieDAOinterface {
 
         if($redirect) {
             $this->message->setMessage("Filme cadastrado com sucesso!", "sucess", "dashboard.php");
+        
+        }
 
+    }
+    
+    public function update($title, $description, $image, $trailer, $category, $length, $id, $redirect = true){
+
+        
+        $stmt = $this->conn->prepare("UPDATE movies SET
+        title = :title,
+        description = :description,
+        image = :image,
+        trailer = :trailer,
+        category = :category,
+        length = :length
+        WHERE id = :id");
+
+
+        $stmt->bindParam(":title", $title);
+        $stmt->bindParam(":description", $description);
+        $stmt->bindParam(":image", $image);
+        $stmt->bindParam(":trailer", $trailer);
+        $stmt->bindParam(":category", $category);
+        $stmt->bindParam(":length", $length);
+        $stmt->bindParam(":id", $id);
+
+        $stmt->execute();
+
+        if($redirect) {
+            $this->message->setMessage("Filme atualizado com sucesso!", "sucess", "dashboard.php");
         }
 
 
 
-
-    }
-    
-    
-    public function update($title, $description, $image, $trailer, $category, $length, $users_id){
 
     }
 

@@ -27,11 +27,6 @@ if($type === "update") {
 
     $uploadDir = "uploads/";
 
-// Verifica se o diretório existe, se não, cria
-if (!is_dir($uploadDir)) {
-    mkdir($uploadDir, 0755, true);
-}
-
 
 if(isset($_FILE['image'])) {
     $message->setMessage("Imagem não enviada", "error", "back");

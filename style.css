@@ -365,6 +365,15 @@ body {
 
 
 
+#img_view {
+    width: 200px;
+    height: 200px;
+ 
+
+}
+
+
+
 
 .container-info {
     display: flex;

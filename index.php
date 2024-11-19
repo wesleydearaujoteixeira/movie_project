@@ -46,7 +46,7 @@
                                 </p>
                                 <h5 class="card-title"> <?= $movie["title"] ?> </h5> <!-- Corrigido: exibe o título do filme -->
                                 <a href="#" class="btn btn-primary rate-btn"> Avaliar </a>
-                                <a href="#" class="btn btn-primary" id="card-btn"> Conhecer </a>
+                                <a href="viewmovies.php?id=<?= $movie['id'] ?>" class="btn btn-primary" id="card-btn"> Conhecer </a>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                                     </p>
                                     <h5 class="card-title"> <?= $movie["title"] ?> </h5> <!-- Corrigido: exibe o título do filme -->
                                     <a href="#" class="btn btn-primary rate-btn"> Avaliar </a>
-                                    <a href="#" class="btn btn-primary" id="card-btn"> Conhecer </a>
+                                    <a href="viewmovies.php" class="btn btn-primary" id="card-btn"> Conhecer </a>
                                 </div>
                             </div>
                         </div>
@@ -109,8 +109,8 @@
                                         <span class="rating"> 9 </span> <!-- Aqui você pode usar a nota do filme, se tiver no seu banco -->
                                     </p>
                                     <h5 class="card-title"> <?= $movie["title"] ?> </h5> <!-- Corrigido: exibe o título do filme -->
-                                    <a href="#" class="btn btn-primary rate-btn"> Avaliar </a>
-                                    <a href="#" class="btn btn-primary" id="card-btn"> Conhecer </a>
+                                    <a href="viewmovies.php" class="btn btn-primary rate-btn"> Avaliar </a>
+                                    <a href="viewmovies.php" class="btn btn-primary" id="card-btn"> Conhecer </a>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                 
                     }
                 } else {
-                    echo "<p>Nenhum filme encontrado.</p>";  // Caso não haja filmes
+                    echo "<p> Nenhum filme encontrado.</p>";  // Caso não haja filmes
                 }
                 ?>
             </div>
@@ -142,8 +142,8 @@
                                         <span class="rating"> 9 </span> <!-- Aqui você pode usar a nota do filme, se tiver no seu banco -->
                                     </p>
                                     <h5 class="card-title"> <?= $movie["title"] ?> </h5> <!-- Corrigido: exibe o título do filme -->
-                                    <a href="#" class="btn btn-primary rate-btn"> Avaliar </a>
-                                    <a href="#" class="btn btn-primary" id="card-btn"> Conhecer </a>
+                                    <a href="" class="btn btn-primary rate-btn"> Avaliar </a>
+                                    <a href="viewmovies.php" class="btn btn-primary" id="card-btn"> Conhecer </a>
                                 </div>
                             </div>
                         </div>

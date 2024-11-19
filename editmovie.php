@@ -20,22 +20,23 @@ if(isset($_GET['id'])) {
 
 $movieData = $movieDAO->findById($idMovie);
 
-
-
+$id = $movieData["id"];
 
 
 ?>
 
         <main id="profile-container" class="container-fluid">
 
-                        <img class="image-edit" src="<?= $movieData["image"] ?>" alt="logo">            
+                    <img class="image-edit" src="<?= $movieData["image"] ?>" alt="logo">            
     
                     <section>
-                        <form action="users_process.php" method="POST" enctype="multipart/form-data" class="form">
+                        <form action="movie_edit_process.php" method="POST" enctype="multipart/form-data" class="form">
                                 <input type="hidden" name="type" value="update">
+                                <input type="hidden" name="id" value="<?= $id ?>">
+                                
                                 <div
                         
-                                style="max-width: 600px;" >
+                                style="max-width: 600px;">
                         
                                 <div class="form-group">
                 <label for="title"> Titulo: </label>

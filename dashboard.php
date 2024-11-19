@@ -27,13 +27,16 @@ $movies = $movieDAO->getMovieByUserId($userData['id']);
             <?php if (count($movies) > 0): ?>
                 <div class="movie-cards">
                     <?php foreach ($movies as $movie): ?>
+                        
                         <div class="movie-card">
                             <h3 class="movie-title"><?php echo htmlspecialchars($movie['title']); ?></h3>
                             <p class="movie-rating"><i class="fas fa-star"></i> 9 </p>
                             <div class="movie-actions">
-                                <a href="editmovie.php?id=<?php echo $movie['id']; ?>" class="edit-btn">
+                                
+                            <a href="editmovie.php?id=<?php echo $movie['id']; ?>" class="edit-btn">
                                     <i class="far fa-edit"></i> Editar
                                 </a>
+
                                 <form action="deletemovie.php" method="post" class="delete-form">
                                     <input type="hidden" name="movie_id" value="<?php echo $movie['id']; ?>">
                                     <button type="submit" class="delete-btn">
